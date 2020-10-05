@@ -1,7 +1,27 @@
 <?php
 
+namespace NHS_FAQ\ADMIN;
+
 /**
- * Load Case Studies CPT
+ * Load FAQ CPT
  */
 
 require_once 'inc/faq-post-type.php';
+
+/**
+ * Load FAQ Taxonomies
+ */
+
+require_once 'inc/faq-taxonomies.php';
+
+/**
+ * Load FAQ Archive Template
+ */
+
+require_once 'inc/faq-template-loader.php';
+
+/**
+ * Filter FAQ
+ */
+
+require_once 'inc/faq_title.php';

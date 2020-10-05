@@ -1,5 +1,11 @@
 <?php
 
+namespace NHS_FAQ\ADMIN\Custom_Post_Type;
+
+
+add_action( 'init',  __NAMESPACE__ . '\create_faq_post_type' );
+
+
 function create_faq_post_type() {
     $faqs_labels = array(
         'name'               => 'FAQs',
@@ -39,17 +45,18 @@ function create_faq_post_type() {
 
     register_post_type( 'faqs', $faqs_args );
 }
-add_action( 'init', 'create_faq_post_type' );
+
+
+add_action( 'pre_get_posts', __NAMESPACE__ . '\dont_paginate_faqs' );
 
 function dont_paginate_faqs( $query ) {
-    if ( ! is_admin() && $query->is_main_query() ) {
-        // Not a query for an admin page.
-        // It's the main query for a front end page of your site.
-        if ( $query->get('post_type') == 'faqs' ) {
-            // It's the main query for a faqs archive.
-            // Let's change the query for faqs archives.
-            $query->set( 'posts_per_page', -1 );
-        }
+
+    // Not a query for an admin page.
+    // It's the main query for a faqs archive.
+
+    if ( ! is_admin() && is_archive( 'faqs' ) && $query->is_main_query() ) {
+        
+        // Let's change the query for faqs archives.
+        $query->set( 'posts_per_page', -1 );
     }
 }
-add_action( 'pre_get_posts', 'dont_paginate_faqs' );
