@@ -14,8 +14,6 @@ get_header();
 <div id="primary" class=" nhsuk-grid-row">
     <header class="page-header">
 
-        <?php echo get_the_archive_title(); ?>
-
         <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 
         </h1>

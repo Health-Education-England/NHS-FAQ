@@ -10,12 +10,10 @@ function filter_title( $title ) {
 
     if ( is_tax( 'faq_categories' ) ) { 
         
-        $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+        $title = sprintf( __( 'FAQs - %1$s', 'nhs_faq' ), single_term_title( '', false ) );
 
-    } elseif ( is_post_type_archive( 'faq_categories' ) ) {
-
-    	var_dump('assdfsdfsdfsd');
-        
+    } elseif ( is_post_type_archive( 'faqs' ) ) {
+       
         $title = post_type_archive_title( '', false );
     
     }
