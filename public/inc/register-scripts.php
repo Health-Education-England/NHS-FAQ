@@ -12,7 +12,7 @@ function register_scripts(){
 	$js_path = '/public/js';
 	$css_path = '/public/css';
 
-	if( is_archive( 'faq' ) ){
+	if( is_post_type_archive('faqs') || is_tax('faq_categories') ){
 
 		// Only load on post type page
 		wp_enqueue_script( 
