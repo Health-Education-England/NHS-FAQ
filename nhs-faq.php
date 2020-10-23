@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: NHS FAQ
- * Plugin URI: https://github.com/Health-Education-England/nhs-jobs
+ * Plugin URI: https://github.com/Health-Education-England/NHS-FAQ
  * Description: NHS FAQ Plugin
  * Version: 1.0.0
  * Author: VeryTwisty
@@ -52,6 +52,38 @@ function get_plugin_url() {
 
     return $plugin_url;
 }
+
+/**
+ * Flushes re-write rules
+ *
+ * @since  1.0.0
+ *
+ */
+
+function activate() {
+
+	\NHS_FAQ\ADMIN\Custom_Post_Type\create_faq_post_type();
+	\NHS_FAQ\ADMIN\Custom_Taxonomy\faq_categories();
+
+   flush_rewrite_rules();
+
+}
+
+/**
+ * Flushes re-write rules
+ *
+ * @since  1.0.0
+ *
+ */
+
+function deactivate() {
+    flush_rewrite_rules();
+}
+
+
+register_activation_hook( __FILE__, __NAMESPACE__ . '\activate' );
+
+register_deactivation_hook( __FILE__, __NAMESPACE__ . '\deactivate' );
 
 
 require_once 'admin/admin.php';
