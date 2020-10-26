@@ -32,3 +32,9 @@ require_once 'inc/faq_title.php';
  */
 
 require_once 'inc/faq-screen-options.php';
+
+/**
+ * Admin notice if Nighingale and NHS Plugins not installed
+ */
+
+require_once 'inc/faq-admin-notices.php';
