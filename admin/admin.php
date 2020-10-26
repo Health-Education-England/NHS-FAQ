@@ -25,3 +25,10 @@ require_once 'inc/faq-template-loader.php';
  */
 
 require_once 'inc/faq_title.php';
+
+
+/**
+ * Update screen options so Custom Tax is visible by default
+ */
+
+require_once 'inc/faq-screen-options.php';
