@@ -25,9 +25,9 @@ function register_scripts(){
 
 	    wp_enqueue_style( 
 	        'nhsfaq_search_css',  
-	        \NHS_FAQ\SetUp\get_plugin_url() . $css_path . '/faq-styles.css',
+	        \NHS_FAQ\SetUp\get_plugin_url() . $css_path . '/style.css',
 	        array(),
-	        filemtime( \NHS_FAQ\SetUp\get_plugin_directory() . $css_path . '/faq-styles.css' )
+	        filemtime( \NHS_FAQ\SetUp\get_plugin_directory() . $css_path . '/style.css' )
 	    );
 	}
 
