@@ -6,4 +6,8 @@ ul.faq-list{
 	padding-left: 0;
 	display: flex;
 	flex-wrap: wrap;
+
+	li{
+		margin-bottom: 0;
+	}
 }
