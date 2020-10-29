@@ -29,29 +29,46 @@ get_header();
 
     if( ! is_tax() && count( $terms ) > 0 ): ?>
 
-        <div class="nhsfaq-terms">
 
-        <?php foreach ( $terms as $key => $term ) : ?>
+        <ul class="nhsuk-grid-row faq-list">  
 
-            <?php if( $term->parent === 0 ): ?>
+            <?php foreach ( $terms as $key => $term ) : ?>
 
-                <a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" class="nhsfaq-term">
+                <?php if( $term->parent === 0 ): ?>
 
-                    <span class="nhsfaq-term-txt">
-                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M0 0h24v24H0z" fill="none"></path>
-                          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                        </svg>
-                        <span class="nhsuk-action-link__text"><?php echo esc_html( $term->name ); ?></span>
-                    </span>
+                    <li class="nhsuk-grid-column-one-quarter">
 
-                </a>
+                        <div class="nhsuk-promo">
 
-            <?php endif; ?>
-        
-        <?php endforeach; ?>
+                            <a class="nhsuk-promo__link-wrapper" href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>">
+                                <div class="nhsuk-promo__content">
 
-        </div>
+                                    <div class="nhsuk-card__content">
+
+                                        <h3 class="nhsuk-promo__heading">
+                                            <?php echo esc_html( $term->name ); ?>
+                                        </h3>
+
+                                        <?php if( $term->description ): ?>
+
+                                            <div class="nhsuk-promo__description">
+                                                <p><?php echo $term->description; ?></p>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                <?php endif; ?>
+            
+            <?php endforeach; ?>
+
+        </ul>
 
     <?php else: ?>     
 
