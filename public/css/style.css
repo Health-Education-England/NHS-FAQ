@@ -1,2 +1,2 @@
-.faqslisting .nhsuk-details.hidden{display:none}ul.faq-list{padding-left:0;display:flex;flex-wrap:wrap}ul.faq-list li{margin-bottom:0}
+.faqslisting .nhsuk-details.hidden{display:none}ul.faq-list{padding-left:0;display:flex;flex-wrap:wrap;list-style:none}ul.faq-list li{margin-bottom:0;display:flex}
 /*# sourceMappingURL=style.css.map */

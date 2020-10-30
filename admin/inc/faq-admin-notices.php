@@ -1,6 +1,6 @@
 <?php
 
-namespace NHS_FAQ\ADMIN\ADMIN\Notices;
+namespace NHS_FAQ\ADMIN\Notices;
 
 add_action( 'admin_notices', __NAMESPACE__ . '\check_theme_plugin_installed' );
 

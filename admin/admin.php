@@ -38,3 +38,10 @@ require_once 'inc/faq-screen-options.php';
  */
 
 require_once 'inc/faq-admin-notices.php';
+
+
+/**
+ * Breadcrumb filter
+ */
+
+require_once 'inc/faq-breadcrumbs.php';
