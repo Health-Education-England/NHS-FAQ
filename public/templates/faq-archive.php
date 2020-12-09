@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-<div id="primary" class="nhsuk-width-container nhsuk-grid-row">
+<div id="primary" class="">
     <header class="page-header">
 
         <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
